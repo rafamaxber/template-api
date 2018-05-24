@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  db:
+    container_name: arkay-mongo
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+  app:
+    container_name: arkay-app
+    build: .
+    command: npm run dev
+    depends_on:
+      - db
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "3000:3000"
