@@ -5,7 +5,7 @@
 * /me
 * /login
 * /recupera senha
-*/
+
 
 new Autentication({
   fbid: '',
@@ -13,3 +13,10 @@ new Autentication({
   loginSchema,
   CadasterSchema,
 });
+*/
+
+const Autentication = require("./routes");
+
+module.exports = {
+  Autentication,
+};

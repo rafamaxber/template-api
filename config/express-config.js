@@ -16,9 +16,7 @@ module.exports = () => {
   consign({
     verbose: false
   })
-    .include("services")
-    .then("controller")
-    .then("routes")
+    .include("routes")
     .into(app);
 
   return app;
