@@ -5,9 +5,32 @@
   * /recupera senha
   */
 
+class Login {
+  constructor(expressInstance) {
+    this._app = expressInstance
+    return this.init()
+  }
+
+  init() {
+    return {
+      list: this.list()
+    }
+  }
+
+  list() {
+    this._app.get('/login', (res, req) => {
+      return req.send('Login aqui :D')
+    })
+  }
+}
+
+export default Login
+/*
 module.exports = app => {
   const { check, validationResult } = require("express-validator/check");
-
+  app.get('/login', (req, res) => {
+    res.sens('oeeee')
+  })
   app.post(
     "/login",
     [
@@ -30,7 +53,9 @@ module.exports = app => {
       password,
     })
     */
+   /*
       return res.status(200).json(req.body);
     }
   );
 };
+*/

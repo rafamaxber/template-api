@@ -4,20 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon"
+    "start": "cd app && node index.js",
+    "dev": "nodemon --exec npm run babel-node -- src/index.js",
+    "build": "npm run rimraf && babel src -d app",
+    "babel-node": "babel-node --presets=env",
+    "rimraf": "rimraf app"
   },
   "keywords": [],
   "author": "Rafael Bernardo <rafamaxber@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "consign": "^0.1.6",
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "express-validator": "^5.2.0"
   },
   "devDependencies": {
-    "nodemon": "^1.14.11"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.14.11",
+    "rimraf": "^2.6.2"
   }
 }
