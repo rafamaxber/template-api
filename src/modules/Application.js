@@ -1,7 +1,7 @@
-import Login from './Login'
+import Authentication from './Authentication'
 
 const Application = (app) => ({
-  Login: Login(app)
+  Authentication: Authentication(app)
 })
 
 export default Application

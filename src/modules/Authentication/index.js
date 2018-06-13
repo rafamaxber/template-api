@@ -7,6 +7,6 @@
 
 import Routes from './routes'
 
-const Login = (instance) => Routes(instance)
+const Authentication = (instance) => Routes(instance)
 
-export default Login
+export default Authentication

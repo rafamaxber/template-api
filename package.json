@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd app && node index.js",
+    "start": "npm run build && cd app && node index.js",
     "dev": "nodemon --exec npm run babel-node -- src/index.js",
     "build": "npm run rimraf && babel src -d app",
     "babel-node": "babel-node --presets=env",
