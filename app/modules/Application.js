@@ -10,10 +10,10 @@ var _Login2 = _interopRequireDefault(_Login);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Routes = function Routes(app) {
+var Application = function Application(app) {
   return {
-    Login: new _Login2.default(app)
+    Login: (0, _Login2.default)(app)
   };
 };
 
-exports.default = Routes;
+exports.default = Application;
