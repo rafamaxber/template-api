@@ -8,7 +8,13 @@
     "dev": "nodemon --exec npm run babel-node -- src/index.js",
     "build": "npm run rimraf && babel src -d app",
     "babel-node": "babel-node --presets=env",
-    "rimraf": "rimraf app"
+    "rimraf": "rimraf app",
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
   },
   "keywords": [],
   "author": "Rafael Bernardo <rafamaxber@gmail.com>",
@@ -21,7 +27,9 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-jest": "^23.0.1",
     "babel-preset-env": "^1.7.0",
+    "jest": "^23.1.0",
     "nodemon": "^1.14.11",
     "rimraf": "^2.6.2"
   }
