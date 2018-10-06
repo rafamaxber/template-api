@@ -8,7 +8,7 @@ exports.loginValidate = exports.helthz = undefined;
 var _check = require('express-validator/check');
 
 var helthz = function helthz(req, res) {
-  res.send('Hello Module :D');
+  return res.send('Hello Module :D');
 };
 
 var loginValidate = function loginValidate(req, res) {
