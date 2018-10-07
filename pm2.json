@@ -1,0 +1,5 @@
+{
+  "name": "template-api",
+  "script": "app/index.js",
+  "instances": "max"
+}

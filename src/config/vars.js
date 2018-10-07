@@ -1,7 +1,4 @@
-const PORT = process.env.PORT || '3333'
-const HOST = process.env.HOST || 'localhost'
+const PORT = process.env.PORT
+const HOST = process.env.HOST
 
-export {
-  PORT,
-  HOST
-}
+export { PORT, HOST }

@@ -1,8 +1,15 @@
-FROM mhart/alpine-node:latest
+FROM keymetrics/pm2:latest-alpine
 
-WORKDIR /usr/app
+ENV NODE_ENV "production"
+ARG APP_ENV="production"
 
+# Bundle APP files
+COPY app app/
 COPY package.json .
-RUN npm install --quiet
+COPY pm2.json .
 
-COPY . .
+# Install app dependencies
+ENV NPM_CONFIG_LOGLEVEL warn
+RUN npm install --production
+
+CMD [ "pm2-runtime", "start", "pm2.json" ]
