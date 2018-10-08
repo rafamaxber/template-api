@@ -2,7 +2,7 @@ version: '2'
 
 services:
   db:
-    container_name: arkay-mongo
+    container_name: template-mongo
     image: mongo:latest
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
@@ -11,14 +11,18 @@ services:
       - ./data:/data/db
     ports:
       - "27017:27017"
+
   app:
-    container_name: arkay-app
-    build: .
-    command: npm run dev
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    environment:
+      APP_ENV: development
     depends_on:
       - db
     volumes:
       - .:/usr/app/
       - /usr/app/node_modules
+    command: npm run dev
     ports:
       - "3000:3000"
